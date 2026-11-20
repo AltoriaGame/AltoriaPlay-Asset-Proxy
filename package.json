@@ -1,0 +1,14 @@
+{
+  "name": "retoria-asset-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HTTP asset proxy for SeaweedFS, with Godot runtime examples",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "dev": "node --watch --env-file=.env server.js"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}
