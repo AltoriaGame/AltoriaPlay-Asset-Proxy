@@ -205,7 +205,7 @@ function handleRequest(req, res) {
   if (url.pathname === "/health" && req.method === "GET") {
     return sendJson(res, 200, {
       status: "online",
-      service: "Retoria Asset Proxy",
+      service: "AltoriaPlay Asset Proxy",
       version: "1.0.0"
     });
   }
@@ -252,7 +252,7 @@ const server = http.createServer((req, res) => {
   try {
     handleRequest(req, res);
   } catch (error) {
-    console.error("[Retoria Asset Proxy]", error);
+    console.error("[AltoriaPlay Asset Proxy]", error);
     if (!res.headersSent) sendJson(res, 500, { error: "Internal server error." });
     else res.destroy(error);
   }
@@ -263,7 +263,7 @@ server.headersTimeout = 60000;
 
 server.listen(CONFIG.PORT, CONFIG.HOST, () => {
   console.log("--------------------------------------");
-  console.log(" Retoria Asset Proxy API");
+  console.log("AltoriaPlay Asset Proxy API");
   console.log("--------------------------------------");
   console.log(` Listening: http://${CONFIG.HOST}:${CONFIG.PORT}`);
   console.log(` SeaweedFS: ${CONFIG.SEAWEEDFS_URL}`);
